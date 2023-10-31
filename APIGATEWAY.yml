@@ -35,4 +35,4 @@ jwt:
   refrEshexpireMs: 120000
 logging:
   pattern:
-  level: "%5p [${spring.application.name:},%X{traceId:-},{spanId:-}]"
+  level: "%5p [${spring.application.name:-},%X{traceId:-},{spanId:-}]"
