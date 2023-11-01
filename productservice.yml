@@ -11,7 +11,7 @@ spring:
     hibernate:
       ddl-auto: update
   application:
-    name: PRODUCTSERVICE
+    name: PRODUCT-SERVICE
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
