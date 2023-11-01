@@ -4,32 +4,28 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: ODER-SERVICE
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/order/**
         - id: AUTH-SERVICE
           uri: lb://AUTH-SERVICE
           predicates:
             - Path=/auth/**
-            
-        - id: ORDER-SERVICE
-          uri: lb://ORDER-SERVICE
-          predicates:
-            - Path=/order/**
-            
-        - id: PRODUCT-SERVICE
-          uri: lb://PRODUCT-SERVICE
-          predicates:
-            - Path=/product/**
-           
         - id: PAYMENT-SERVICE
           uri: lb://PAYMENT-SERVICE
           predicates:
             - Path=/payment/**
-#redis:
-#  host: redis
-#  port: 6379
-#logging:
-#  level:
-#  org.springframework: DEBUG
+        - id: PRODUCT-SERVICE
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/product/**
+  
 jwt:
   secret: mySecretKey
   expireMs: 120000
   refrEshexpireMs: 120000
+logging:
+  pattern:
+    # Logging pattern containing traceId and spanId; no longer provided through Sleuth by default
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"   
