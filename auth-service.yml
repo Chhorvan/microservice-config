@@ -10,7 +10,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
   application:
     name: AUTH-SERVICE
 
@@ -21,7 +21,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}  
+      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8082/eureka}  
 
 jwt:
   secret: mySecretKey
@@ -34,4 +34,4 @@ jwt:
 #     fetch-registry: true
 #     register-with-eureka: true
 #     service-url:
-#       defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
+#       defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8082/eureka}
