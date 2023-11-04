@@ -6,8 +6,8 @@ spring:
     url: ${DB_HOST}
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
-    # driverClassName: com.mysql.cj.jdbc.Driver
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
+    # driverClassName: com.mysql.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     #database-platform: org.hibernate.dialect.MySQL8InnoDBDialect
