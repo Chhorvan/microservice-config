@@ -9,8 +9,9 @@ spring:
     # driverClassName: com.mysql.cj.jdbc.Driver
     driverClassName: com.mysql.jdbc.Driver
   jpa:
-    # database-platform: org.hibernate.dialect.MySQL8Dialect
-    database-platform: org.hibernate.dialect.MySQL8InnoDBDialect
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    #database-platform: org.hibernate.dialect.MySQL8InnoDBDialect
+    show-sql: true
     hibernate:
       ddl-auto: update
   application:
